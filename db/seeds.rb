@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+profs = {"L. Warrick": "CS", "M. Farncombe": "JD", "C Joaquin": "CJ"}
+
+profs.each {|n, d| Professor.create(name: n, department: d, tenure: true)}
