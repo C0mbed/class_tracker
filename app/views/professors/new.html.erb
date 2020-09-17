@@ -1,1 +1,11 @@
 <h1>Add professor</h1>
+
+<%= form_for @professor do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :department %>
+    <%= f.text_field :department %>
+    <%= f.label :tenure %>
+    <%= f.check_box :tenure %>
+    <%= f.submit %>
+<% end %>

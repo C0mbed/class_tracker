@@ -3,3 +3,5 @@
 <%@professors.each do |professor|%>
     <p><%=link_to professor.name, professor_path(professor)%></p>
 <% end %>
+
+<%= link_to "Add professor", new_professor_path %>
