@@ -1,10 +1,12 @@
 class ProfessorsController < ApplicationController
-    def show
-        @professor = Professor.find(params[:id])
-    end
-
+    
+    before_action :set_professor, only: [:show, :edit, :update, :destroy]
+    
     def index
         @professors = Professor.all
+    end
+    
+    def show
     end
 
     def new
@@ -17,16 +19,23 @@ class ProfessorsController < ApplicationController
     end
     
     def edit
-        @professor = Professor.find(params[:id])
     end
     
     def update
-        @professor = Professor.find(params[:id])
         @professor.update(professor_params)
         redirect_to professor_path(@professor)
     end
-
+    
+    def destroy
+        @professor.destroy
+        redirect_to professors_path
+    end
+    
     private
+    
+    def set_professor
+        @professor = Professor.find(params[:id])
+    end
 
     def professor_params
         params.require(:professor).permit(:name, :department, :tenure)

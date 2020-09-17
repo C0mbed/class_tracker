@@ -2,7 +2,8 @@
 
 <h1> <%=@professor.name %></h1>
 <h3> <%= @professor.department %></h3>
-<h3><%= @professor.tenure %></h3>
+<h3> <%= @professor.tenure %></h3>
 
 <%= link_to "Edit", edit_professor_path(@professor) %>
+<%= button_to "Delete", @professor, method: :delete %>
 <%= link_to "Professor Index", professors_path %>
