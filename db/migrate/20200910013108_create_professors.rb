@@ -3,7 +3,7 @@ class CreateProfessors < ActiveRecord::Migration[6.0]
     create_table :professors do |t|
       t.string :name
       t.string :department
-      t.boolean :tenure
+      t.boolean :tenure, default: false
 
       t.timestamps
     end

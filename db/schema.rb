@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_09_10_013108) do
   create_table "professors", force: :cascade do |t|
     t.string "name"
     t.string "department"
-    t.boolean "tenure"
+    t.boolean "tenure", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
