@@ -14,8 +14,12 @@ class ProfessorsController < ApplicationController
     end
 
     def create
-        @professor = Professor.create(professor_params)
-        redirect_to professor_path(@professor)
+        @professor = Professor.new(professor_params)
+        if @professor.save
+            redirect_to professor_path(@professor)
+        else
+           render :new 
+        end 
     end
     
     def edit

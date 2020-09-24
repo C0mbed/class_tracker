@@ -1,5 +1,15 @@
 <h1>Add professor</h1>
 
+<% if @professor.errors.any? %>
+    <div id="error explanation">
+    <ul>
+        <% @professor.errors.full_messages.each do |error|%>
+            <li><%= error %></li>
+        <% end %>
+    </ul>
+    </div>
+<% end %> 
+
 <%= form_for @professor do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
